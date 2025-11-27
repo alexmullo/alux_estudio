@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tu Agencia Creativa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <div class="cursor-blob"></div>  <!-- NUEVO -->
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <img class="logo-img" src="Acssents/ALUX_LOGO_FINAL.png" alt="Logo personal" />
+
+    <nav class="main-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>  <!-- NUEVO -->
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+
+      <a class="btn-nav" href="https://wa.me/593000000000" target="_blank" rel="noopener">
+        Quiero potenciar mi marca
+      </a>
+
+      <button class="burger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO con p5 -->
+  <main>
+    <section id="inicio" class="hero">
+      <div id="hero-canvas"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Agencia creativa en Ecuador</p>
+          <h1>
+            Ideas con identidad<br />
+            para marcas auténticas
+          </h1>
+          <p class="hero-subtitle">
+            Estrategias, diseño y contenidos que conectan con personas reales
+            y ayudan a que tu marca crezca.
+          </p>
+          <a class="btn-primary" href="https://wa.me/593000000000" target="_blank" rel="noopener">
+            Hablemos por WhatsApp
+          </a>
+        </div>
+        <div class="hero-media">
+          <div class="hero-box"></div>
+        </div>
+      </div>
+    </section>
+
+        <!-- PORTAFOLIO -->
+    <section id="portafolio" class="section section-alt">
+      <div class="container">
+        <h2>Portafolio</h2>
+        <p class="section-intro">
+          Algunos proyectos recientes en los que has trabajado para marcas locales y personales.
+        </p>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-item">
+            <div class="portfolio-thumb">
+              <!-- Reemplaza por tu imagen -->
+              <img src="https://via.placeholder.com/600x400" alt="Proyecto 1 - Branding minimarket" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Branding Minimarket</h3>
+              <p>Rediseño de identidad visual y contenido para redes sociales.</p>
+              <span class="portfolio-tag">Branding · Social Media</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img src="https://via.placeholder.com/600x400" alt="Proyecto 2 - Campaña inmobiliaria" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Campaña Inmobiliaria</h3>
+              <p>Piezas gráficas y reels para lanzamiento de proyecto inmobiliario.</p>
+              <span class="portfolio-tag">Publicidad · Video</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img src="https://via.placeholder.com/600x400" alt="Proyecto 3 - Marca personal" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Marca Personal</h3>
+              <p>Identidad visual y contenido mensual para creador de contenido.</p>
+              <span class="portfolio-tag">Marca personal</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <div class="portfolio-thumb">
+              <img src="https://via.placeholder.com/600x400" alt="Proyecto 4 - Negocio local" />
+            </div>
+            <div class="portfolio-info">
+              <h3>Negocio Local</h3>
+              <p>Diseño de piezas para redes, flyers y contenido audiovisual.</p>
+              <span class="portfolio-tag">Diseño gráfico · Contenido</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section section-alt">
+      <div class="container">
+        <h2>Testimonios</h2>
+        <p class="section-intro">
+          Opiniones de clientes que confiaron en tus ideas.
+        </p>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p class="card-text">
+              “Gracias a la estrategia y el contenido, nuestra marca se ve mucho más profesional.”
+            </p>
+            <p class="card-footer">Cliente 1 · Negocio local</p>
+          </article>
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p class="card-text">
+              “El contenido audiovisual nos ayudó a llegar a más personas y aumentar ventas.”
+            </p>
+            <p class="card-footer">Cliente 2 · Emprendimiento</p>
+          </article>
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p class="card-text">
+              “Muy buena comunicación, ideas claras y un diseño alineado con nuestra identidad.”
+            </p>
+            <p class="card-footer">Cliente 3 · Marca personal</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2>Servicios</h2>
+        <p class="section-intro">
+          Lo que puedes ofrecer a tus clientes como diseñador y creador de contenido.
+        </p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Manejo de redes sociales</h3>
+            <p>
+              Planificación, diseño y publicación de contenido mensual enfocado en objetivos claros.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Diseños personalizados</h3>
+            <p>
+              Identidad visual, piezas gráficas y materiales para marcas con personalidad propia.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Producción audiovisual</h3>
+            <p>
+              Edición de video y contenidos cortos pensados para redes sociales y anuncios.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Consultorías creativas</h3>
+            <p>
+              Sesiones para revisar la presencia digital de una marca y proponer mejoras.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- PROCESO -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Cómo trabajas</h2>
+        <p class="section-intro">
+          Un proceso simple y claro para tus proyectos.
+        </p>
+        <ol class="steps">
+          <li>
+            <h3>1. Reunión y brief</h3>
+            <p>Entiendes la marca, sus objetivos y su contexto.</p>
+          </li>
+          <li>
+            <h3>2. Propuesta creativa</h3>
+            <p>Presentas ideas, referencias y un plan de contenidos o piezas.</p>
+          </li>
+          <li>
+            <h3>3. Producción</h3>
+            <p>Diseñas, grabas y editas todo el material necesario.</p>
+          </li>
+          <li>
+            <h3>4. Entrega y ajustes</h3>
+            <p>Entregas archivos finales y haces ajustes puntuales.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Hablemos de tu proyecto</h2>
+          <p>
+            Cuéntame sobre tu marca, tus metas y lo que te gustaría lograr con diseño y contenido.
+          </p>
+          <a class="btn-primary" href="https://wa.me/593000000000" target="_blank" rel="noopener">
+            Escribir por WhatsApp
+          </a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
+          <a href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <p>© 2025 Tu Nombre · Diseñador gráfico</p>
+      <p>Diseño y código por Ti</p>
+    </div>
+  </footer>
+
+  <!-- LIBRERÍA p5.js + SKETCH + JS GENERAL -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="sketch.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
