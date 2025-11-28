@@ -1,104 +1,88 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Scroll suave del menú
-  const navLinks = document.querySelectorAll('header .main-nav a[href^="#"]');
+let particles = [];
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", event => {
-      event.preventDefault();
-      const targetId = link.getAttribute("href");
-      const targetEl = document.querySelector(targetId);
+function setup() {
+  const heroCanvas = document.getElementById("hero-canvas");
+  const w = heroCanvas ? heroCanvas.clientWidth || window.innerWidth : window.innerWidth;
+  const h = heroCanvas ? Math.max(heroCanvas.clientHeight, 520) : 520;
 
-      if (targetEl) {
-        targetEl.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
+  const cnv = createCanvas(w, h);
+  cnv.parent("hero-canvas");
 
-      // Cerrar menú móvil si está abierto
-      const nav = document.querySelector(".main-nav");
-      const burger = document.querySelector(".burger");
-      if (nav && burger) {
-        nav.classList.remove("nav-open");
-        burger.classList.remove("burger-open");
-      }
-    });
+  pixelDensity(1);
+  colorMode(HSB, 360, 100, 100, 1);
+  noStroke();
+
+  const count = w < 768 ? 70 : 130;
+  particles = [];
+  for (let i = 0; i < count; i++) {
+    particles.push(new Particle(true));
+  }
+}
+
+function draw() {
+  clear();
+  background(210, 15, 98, 0.96);
+
+  particles.forEach((p) => {
+    p.update();
+    p.display();
   });
+}
 
-  // Resaltar link según sección visible
-  const sections = document.querySelectorAll("section[id]");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute("id");
-      const currentLink = document.querySelector(`.main-nav a[href="#${id}"]`);
-
-      if (entry.isIntersecting && currentLink) {
-        document
-          .querySelectorAll(".main-nav a")
-          .forEach(a => a.classList.remove("active"));
-        currentLink.classList.add("active");
-      }
-    });
-  }, { threshold: 0.4 });
-
-  sections.forEach(section => observer.observe(section));
-
-  // Animaciones "reveal"
-  const revealElements = document.querySelectorAll(
-    ".card, .hero-text, .hero-media, .steps li, .contact-grid > *, .portfolio-item"
-  );
-
-  const revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("reveal-visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  revealElements.forEach(el => {
-    el.classList.add("reveal-hidden");
-    revealObserver.observe(el);
-  });
-
-  // Menú móvil
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".main-nav");
-
-  if (burger && nav) {
-    burger.addEventListener("click", () => {
-      nav.classList.toggle("nav-open");
-      burger.classList.toggle("burger-open");
-    });
+class Particle {
+  constructor(initial = false) {
+    this.reset(initial);
   }
 
-  // ===== BOLITA GLASS QUE SIGUE AL MOUSE =====
-  const blob = document.querySelector(".cursor-blob");
-  if (blob) {
-    let blobX = window.innerWidth / 2;
-    let blobY = window.innerHeight / 2;
-    let targetX = blobX;
-    let targetY = blobY;
+  reset(initial = false) {
+    this.x = random(width);
+    this.y = random(height);
+    this.size = random(4, 14);
+    this.speed = random(0.2, 1.1);
+    this.offset = random(1000);
+    this.layer = random([0.4, 0.7, 1]);
 
-    // Capturamos destino con el mouse
-    window.addEventListener("mousemove", (e) => {
-      targetX = e.clientX;
-      targetY = e.clientY;
-    });
-
-    function animateBlob() {
-      // Interpolación suave (easing)
-      const ease = 0.15; // más alto = sigue más rápido
-      blobX += (targetX - blobX) * ease;
-      blobY += (targetY - blobY) * ease;
-
-      blob.style.left = `${blobX}px`;
-      blob.style.top = `${blobY}px`;
-
-      requestAnimationFrame(animateBlob);
+    if (!initial) {
+      this.y = height + this.size * 2;
     }
-
-    animateBlob();
   }
-});
+
+  update() {
+    const t = frameCount * 0.005;
+    const nX = noise(this.x * 0.001, this.y * 0.001, this.offset + t);
+    const nY = noise(this.x * 0.001, this.y * 0.001, this.offset - t);
+
+    const angle = map(nX, 0, 1, -PI / 4, PI / 4);
+    const float = map(nY, 0, 1, -0.4, 0.4);
+
+    this.x += cos(angle) * this.speed * this.layer;
+    this.y -= this.speed + float;
+
+    if (this.y < -this.size * 2 || this.x < -50 || this.x > width + 50) {
+      this.reset(false);
+    }
+  }
+
+  display() {
+    const hueBase = 205;
+    const hue = hueBase + map(this.layer, 0.4, 1, -6, 8);
+    const alpha = map(this.layer, 0.4, 1, 0.15, 0.45);
+
+    push();
+    fill(hue, 35, 100, alpha * 0.35);
+    ellipse(this.x, this.y, this.size * 2.4, this.size * 2.4);
+    pop();
+
+    fill(hue, 45, 100, alpha);
+    ellipse(this.x, this.y, this.size, this.size);
+  }
+}
+
+function windowResized() {
+  const heroCanvas = document.getElementById("hero-canvas");
+  if (heroCanvas) {
+    const w = heroCanvas.clientWidth || window.innerWidth;
+    const h = heroCanvas.clientHeight || 520;
+    resizeCanvas(w, h);
+  }
+}
