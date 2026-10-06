@@ -1,438 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>ALUX · Diseñador gráfico y contenido</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Branding, contenido para redes y video corto para marcas pequeñas y creadores. Por Alex Mullo (ALUX), desde Ecuador." />
-
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- p5.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-
-  <!-- JS -->
-  <script defer src="script.js"></script>
-  <script defer src="sketch.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e9">
+  <meta name="description" content="Alux Studio: diseño gráfico, motion graphics y contenido para artistas, eventos y marcas. Por Alex Xavier Mullo Yugla, desde Cuenca, Ecuador.">
+  <title>Alux Studio — Diseño que conecta</title>
+  <link rel="icon" type="image/svg+xml" href="assets/alux-studio.svg">
+  <link rel="stylesheet" href="assets/alux.css">
+  <script defer src="assets/alux.js"></script>
+  <script defer src="assets/alux-motion.js"></script>
 </head>
 <body>
-
-  <!-- Blob del cursor -->
-  <div class="cursor-blob"></div>
-
-  <!-- Header -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" aria-hidden="true"></div>
   <header class="site-header">
-    <div class="container nav-container">
-      <img class="logo-img" src="Acssents/ALUX_LOGO_FINAL_2.png" alt="Logo ALUX" />
-      <nav class="main-nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Alux Studio, ir al inicio"><img src="assets/alux-studio.svg" alt="Alux Studio" width="154" height="64"></a>
+      <nav class="nav" aria-label="Navegación principal" id="main-nav">
+        <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#contacto">Contacto <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
       </nav>
-      <a class="btn-nav btn-whatsapp" href="https://wa.me/593987696943" target="_blank" rel="noopener">Hablemos</a>
-      <button class="burger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-social" aria-label="Redes sociales">
+        <a class="social-icon" href="https://www.instagram.com/alux.estudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Alux Studio"><img src="assets/instagram.svg" alt="" width="18" height="18"></a>
+        <a class="social-icon" href="https://www.tiktok.com/@alux.estudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Alux Studio"><img src="assets/tiktok.svg" alt="" width="18" height="18"></a>
+        <a class="social-icon" href="https://wa.me/593987696943" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Alux Studio"><img src="assets/whatsapp.svg" alt="" width="18" height="18"></a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
     </div>
   </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="inicio" class="hero section">
-      <div id="hero-canvas" class="hero-canvas"></div>
-      <div class="container hero-grid">
-
-        <!-- Caja izquierda -->
-        <div class="hero-side hero-side-left scroll-tilt">
-          <div class="hero-box-side">
-            <div class="hero-stat hero-stat-top">
-              <span class="label">Marcas y creadores</span>
-              <span class="value">+15</span>
-            </div>
-            <div class="hero-stat hero-stat-bottom">
-              <span class="label">Proyectos activos</span>
-              <span class="value">3 este mes</span>
-            </div>
+  <main id="contenido">
+    <section id="inicio" class="shell hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Estudio creativo independiente</p>
+        <h1>Hago que tu<br><em>marca conecte</em><br>con su gente<span class="title-dot">.</span></h1>
+        <p class="lead">Diseño y movimiento para artistas, eventos y marcas que tienen algo que contar.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#portafolio">Explorar proyectos <span class="button-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+          <a class="text-link" href="#sobre-mi">Conoce a Alex <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-footer"><span>Cuenca, Ecuador <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><span>Ideas con identidad.<br>Diseño con intención.</span></div>
+      </div>
+      <div class="hero-stage" aria-label="Composición visual de Alux Studio. Videos destacados próximamente.">
+        <div class="motion-canvas" id="hero-motion" aria-hidden="true"></div>
+        <span class="stage-star" aria-hidden="true"><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></span>
+        <div class="hero-piece" data-parallax="1">
+          <div class="video-frame frame-design" data-tilt>
+            <span class="frame-index">01 / DISEÑO</span>
+            <div class="design-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+            <img class="frame-logo" src="assets/alux-studio.svg" alt="" width="240" height="100">
+            <span class="frame-label">Ideas que<br>toman forma<span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
           </div>
+          <small><span class="tiny-dot" aria-hidden="true"></span> Video destacado · próximamente</small>
         </div>
-
-        <!-- Texto central -->
-        <div class="hero-text hero-text-center">
-          <div class="hero-ribbon">
-            <span class="dot-live"></span>
-            <span>Portafolio ALUX · Diseño y contenido</span>
+        <div class="hero-piece" data-parallax="2">
+          <div class="video-frame frame-motion" data-tilt>
+            <span class="frame-index">02 / MOVIMIENTO</span>
+            <div class="motion-symbol" aria-hidden="true"><span><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></span></div>
+            <span class="frame-label">Diseño que<br>se siente<span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span>
           </div>
-
-          <h1>Diseño que hace ver profesional tu marca real.</h1>
-
-          <p class="hero-subtitle">
-            Branding, piezas y video corto para marcas pequeñas y creadores que quieren verse claros, cercanos y bien pensados.
-          </p>
-
-          <div class="hero-pills">
-            <span>Branding</span>
-            <span>Contenido para redes</span>
-            <span>Video corto</span>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#portafolio" class="btn-primary">Ver proyectos en acción</a>
-            <a href="https://wa.me/593987696943" target="_blank" rel="noopener" class="btn-secondary btn-whatsapp">
-              Hablar por WhatsApp
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <span>Desde Ecuador para marcas de cualquier lugar</span>
-            <span>Disponible para nuevos proyectos</span>
-          </div>
+          <small><span class="tiny-dot" aria-hidden="true"></span> Video destacado · próximamente</small>
         </div>
-
-        <!-- Caja derecha -->
-        <div class="hero-side hero-side-right scroll-tilt">
-          <div class="hero-box-side">
-            <div class="hero-stat hero-stat-top">
-              <span class="label">Formatos</span>
-              <span class="value">Branding · Reels · Ads</span>
-            </div>
-            <div class="hero-stat hero-stat-bottom">
-              <span class="label">Plataformas</span>
-              <span class="value">Instagram · TikTok · Meta</span>
-            </div>
-          </div>
-        </div>
-
+        <div class="stage-note" aria-hidden="true"><span>Un poco de diseño.<br>Mucho de personalidad.</span><svg viewBox="0 0 90 60"><path d="M3 4C30 1 58 17 51 36S16 48 28 33s49-2 57 21m-14-2 14 2-2-14"/></svg></div>
       </div>
     </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section section-light">
-      <div class="container">
-        <header class="section-header">
-          <h2>Servicios pensados para personas reales</h2>
-          <p class="section-intro">Cinco formas de trabajar juntos, según lo que tu proyecto necesita ahora mismo. Toca cada tarjeta para ver para quién es.</p>
-        </header>
-
-        <div class="services-row">
-          <!-- 1 -->
-          <article class="service-card scroll-tilt">
-            <div class="service-inner">
-              <div class="service-face service-front">
-                <h3>Branding desde cero</h3>
-                <p>Nombre, logo, colores y sistema visual completo.</p>
-                <span class="service-tag">Identidad</span>
-              </div>
-              <div class="service-face service-back">
-                <p>Para marcas nuevas que quieren salir claras, coherentes y listas para redes, impresos y web.</p>
-              </div>
-            </div>
-          </article>
-          <!-- 2 -->
-          <article class="service-card scroll-tilt">
-            <div class="service-inner">
-              <div class="service-face service-front">
-                <h3>Rediseño de marca</h3>
-                <p>Actualizar tu identidad sin perder esencia.</p>
-                <span class="service-tag">Rebranding</span>
-              </div>
-              <div class="service-face service-back">
-                <p>Para negocios que ya existen y quieren verse más profesionales y actuales.</p>
-              </div>
-            </div>
-          </article>
-          <!-- 3 -->
-          <article class="service-card scroll-tilt">
-            <div class="service-inner">
-              <div class="service-face service-front">
-                <h3>Contenido mensual</h3>
-                <p>Piezas y reels listos para publicar.</p>
-                <span class="service-tag">Social media</span>
-              </div>
-              <div class="service-face service-back">
-                <p>Para publicar constante sin sacrificar diseño, ritmo ni ideas.</p>
-              </div>
-            </div>
-          </article>
-          <!-- 4 -->
-          <article class="service-card scroll-tilt">
-            <div class="service-inner">
-              <div class="service-face service-front">
-                <h3>Packs para lanzamientos</h3>
-                <p>Kits visuales para campañas puntuales.</p>
-                <span class="service-tag">Campañas</span>
-              </div>
-              <div class="service-face service-back">
-                <p>Ideal para lanzamientos inmobiliarios, eventos, cursos o productos.</p>
-              </div>
-            </div>
-          </article>
-          <!-- 5 -->
-          <article class="service-card scroll-tilt">
-            <div class="service-inner">
-              <div class="service-face service-front">
-                <h3>Asesorías 1 a 1</h3>
-                <p>Revisión de tu marca y contenido.</p>
-                <span class="service-tag">Mentoría</span>
-              </div>
-              <div class="service-face service-back">
-                <p>Perfecto si ya diseñas y quieres feedback y dirección clara.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="section-cta">
-          <a class="btn-primary btn-whatsapp" href="https://wa.me/593987696943" target="_blank" rel="noopener">
-            Quiero este tipo de trabajo para mi marca
-          </a>
-        </div>
+    <div class="studio-band" aria-label="Diseño gráfico, motion graphics, artistas y eventos">
+      <div class="band-track" aria-hidden="true">
+        <div class="band-copy">DISEÑO GRÁFICO <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> MOTION GRAPHICS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> ARTISTAS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> EVENTOS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> CONTENIDO <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b></div>
+        <div class="band-copy">DISEÑO GRÁFICO <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> MOTION GRAPHICS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> ARTISTAS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> EVENTOS <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b> CONTENIDO <b><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></b></div>
       </div>
-    </section>
-
-    <!-- PORTAFOLIO -->
-    <section id="portafolio" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>Proyectos seleccionados</h2>
-          <p class="section-intro">Algunos trabajos recientes para marcas personales y negocios locales.</p>
-        </header>
-
-        <div class="portfolio-grid">
-          <article class="portfolio-item scroll-tilt">
-            <div class="portfolio-thumb">
-              <img src="Acssents/proyecto-1.jpg" alt="Branding minimarket" loading="lazy">
-            </div>
-            <div class="portfolio-info">
-              <h3>Branding minimarket</h3>
-              <p>Rediseño de identidad visual y piezas para redes sociales.</p>
-              <span class="portfolio-tag">Branding · Social media</span>
-            </div>
-          </article>
-
-          <article class="portfolio-item scroll-tilt">
-            <div class="portfolio-thumb">
-              <img src="Acssents/proyecto-2.jpg" alt="Lanzamiento inmobiliario" loading="lazy">
-            </div>
-            <div class="portfolio-info">
-              <h3>Lanzamiento inmobiliario</h3>
-              <p>Piezas gráficas y reels para campaña de lanzamiento.</p>
-              <span class="portfolio-tag">Publicidad · Video</span>
-            </div>
-          </article>
-
-          <article class="portfolio-item scroll-tilt">
-            <div class="portfolio-thumb">
-              <img src="Acssents/proyecto-3.jpg" alt="Marca personal creador" loading="lazy">
-            </div>
-            <div class="portfolio-info">
-              <h3>Marca personal creador</h3>
-              <p>Identidad visual y contenido mensual para redes.</p>
-              <span class="portfolio-tag">Marca personal</span>
-            </div>
-          </article>
-        </div>
-
-        <div class="section-cta">
-          <a class="btn-secondary btn-whatsapp" href="https://wa.me/593987696943" target="_blank" rel="noopener">
-            Revisar mi proyecto contigo por WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE ALEX -->
-    <section id="sobre-alex" class="section section-light">
-      <div class="container">
-        <header class="section-header">
-          <h2>Alex detrás de ALUX</h2>
-          <p class="section-intro">Diseñador y creador de contenido en Ecuador: marcas pequeñas que se ven profesionales y cercanas.</p>
-        </header>
-
-        <div class="about-grid card">
-          <div class="about-photo">
-            <img src="Acssents/alex-mullo.jpg" alt="Foto de Alex Mullo, diseñador de ALUX" loading="lazy">
-          </div>
-          <div class="about-content">
-            <h3 class="about-title">Diseño serio, trato relajado.</h3>
-            <p class="about-text">Combino branding, piezas para redes y video corto para que tu proyecto tenga identidad clara, ritmo y un tono humano.</p>
-
-            <div class="about-columns">
-              <div class="about-block">
-                <h4>Habilidades</h4>
-                <ul>
-                  <li>Branding e identidades visuales</li>
-                  <li>Contenido para Instagram y TikTok</li>
-                  <li>Edición de video corto y reels</li>
-                </ul>
-              </div>
-              <div class="about-block">
-                <h4>Estudios y enfoque</h4>
-                <ul>
-                  <li>Formación en diseño gráfico y audiovisual</li>
-                  <li>Experiencia con marcas locales y personales</li>
-                  <li>Proceso claro: brief, dirección, diseño y ajuste</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="section section-light">
-      <div class="container">
-        <header class="section-header">
-          <h2>Lo que dicen quienes han trabajado conmigo</h2>
-          <p class="section-intro">Opiniones reales de branding, contenido y campañas que ya están funcionando.</p>
-        </header>
-
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <p class="testimonial-text">“Nuestra marca pasó de verse improvisada a tener una presencia clara, ordenada y profesional en todas las plataformas.”</p>
-            <p class="testimonial-meta">Cliente de minimarket · Branding y redes</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-text">“El contenido audiovisual nos ayudó a explicar mejor el proyecto y a llegar a más personas en menos tiempo.”</p>
-            <p class="testimonial-meta">Proyecto inmobiliario · Piezas + reels</p>
-          </article>
-          <article class="testimonial-card">
-            <p class="testimonial-text">“Proceso súper claro, feedback constante y diseños alineados a mi personalidad.”</p>
-            <p class="testimonial-meta">Creador de contenido · Marca personal</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESO -->
-    <section id="proceso" class="section section-alt">
-      <div class="container">
-        <header class="section-header">
-          <h2>Cómo avanzamos tu proyecto</h2>
-          <p class="section-intro">Cuatro etapas claras, sin enredos, para que sepas siempre qué estamos construyendo.</p>
-        </header>
-
-        <ol class="steps process-steps">
-          <li class="process-step">
-            <div class="process-card">
-              <span class="process-index">1</span>
-              <h3>Brief y contexto</h3>
-              <p>Revisamos tu marca, objetivos y lo que ya tienes listo.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <div class="process-card">
-              <span class="process-index">2</span>
-              <h3>Dirección visual</h3>
-              <p>Definimos mood, estilos y la propuesta creativa central.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <div class="process-card">
-              <span class="process-index">3</span>
-              <h3>Diseño y producción</h3>
-              <p>Diseño piezas, preparo contenido y edito material audiovisual.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <div class="process-card">
-              <span class="process-index">4</span>
-              <h3>Entrega y ajustes finos</h3>
-              <p>Entrego archivos finales y pulimos detalles según resultados.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- MARCAS -->
-    <section id="marcas" class="section section-light">
-      <div class="container">
-        <header class="section-header">
-          <h2>Marcas con las que he colaborado</h2>
-          <p class="section-intro">Negocios locales, marcas personales y campañas puntuales.</p>
-        </header>
-
-        <div class="brands-strip">
-          <div class="brand-badge">Logo 1</div>
-          <div class="brand-badge">Logo 2</div>
-          <div class="brand-badge">Logo 3</div>
-          <div class="brand-badge">Logo 4</div>
-          <div class="brand-badge">Logo 5</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>Preguntas rápidas antes de escribir</h2>
-          <p class="section-intro">Cómo trabajo y qué puedes esperar.</p>
-        </header>
-
-        <div class="cards-grid">
-          <article class="card">
-            <h3>¿Cómo son los precios?</h3>
-            <p class="card-text">Paquetes según alcance: branding, contenido mensual o packs para lanzamientos.</p>
-          </article>
-          <article class="card">
-            <h3>¿Cuánto dura un proyecto?</h3>
-            <p class="card-text">Branding: 3 a 5 semanas. Contenido mensual: ciclos de 30 días con entregas por bloques.</p>
-          </article>
-          <article class="card">
-            <h3>¿Cómo trabajamos a distancia?</h3>
-            <p class="card-text">WhatsApp, llamadas cortas y envíos en PDF/video para revisar avances desde cualquier ciudad.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="section section-alt">
-      <div class="container contact-grid">
-        <div class="contact-main-box">
-          <h2>¿Hablamos de tu proyecto?</h2>
-          <p class="section-intro">Si te imaginas tu marca con este tipo de diseño y contenido, el siguiente paso es simple: conversamos, revisamos tu idea y vemos qué construir juntos.</p>
-          <a href="https://wa.me/593987696943" target="_blank" rel="noopener" class="btn-primary contact-main-btn btn-whatsapp">Escribir directo a WhatsApp</a>
-          <p class="contact-note">Respondo de lunes a sábado. Empezamos con llamada breve o notas de voz.</p>
-        </div>
-
-        <div class="contact-socials">
-          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="contact-card">
-            <span class="contact-title">Instagram</span>
-            <span class="contact-desc">Detrás de cámaras, procesos y proyectos en curso.</span>
-          </a>
-          <a href="mailto:tucorreo@alux.com" class="contact-card">
-            <span class="contact-title">Correo</span>
-            <span class="contact-desc">Envíame contexto, links o brief si ya tienes algo armado.</span>
-          </a>
-          <a href="https://linktr.ee" target="_blank" rel="noopener" class="contact-card">
-            <span class="contact-title">Otros enlaces</span>
-            <span class="contact-desc">Portafolios adicionales, repositorios o recursos.</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-flex">
-      <span>© 2025 ALUX · Diseño y contenido</span>
-      <span>Hecho en Ecuador</span>
     </div>
-  </footer>
-
+    <section id="sobre-mi" class="shell section about">
+      <div class="section-top" data-reveal>
+        <div><p class="eyebrow">La persona detrás de Alux</p><h2>Sobre mí<span class="title-dot">.</span></h2></div>
+        <span class="section-no">01 / PERFIL</span>
+      </div>
+      <div class="about-grid">
+        <div class="portrait-block" data-reveal>
+          <div class="portrait-frame" id="portrait-frame">
+            <div class="portrait-placeholder" aria-label="Retrato de Alex pendiente de incorporar"><span class="portrait-star" aria-hidden="true"><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M20 80l60-60"/></svg></span><img src="assets/alux-studio.svg" alt="Alux Studio" width="250" height="104"><span class="portrait-pending">Retrato próximamente</span></div>
+            <span class="portrait-badge">Alex / Alux Studio</span>
+          </div>
+          <div class="portrait-caption"><span id="portrait-caption">Alex · retrato personal</span><span>Cuenca, EC</span></div>
+        </div>
+        <div class="about-copy" data-reveal>
+          <p class="about-hello">Hola, soy Alex <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></p>
+          <h3>Una mente creativa.<br>Muchas formas<br>de conectar.</h3>
+          <p>Soy <strong>Alex Xavier Mullo Yugla</strong>, diseñador gráfico y creador audiovisual para redes. Curso el último ciclo de Diseño Gráfico en la <strong>Universidad de Cuenca</strong>. Creo agendas, piezas y animaciones que acercan a las marcas con su público.</p>
+          <div class="experience">
+            <span class="mini-label">Donde las ideas se vuelven reales</span>
+            <p>Colaboro en <button class="agency-switch" id="agency-switch" type="button" aria-controls="portrait-frame" aria-pressed="false" disabled title="El retrato de Inhaus estará disponible al incorporar las fotos">Inhaus Corp</button><a class="agency-link" href="https://www.inhauscorp.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar sitio de Inhaus Corp"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a> con marcas como Nutri, Shamuna y Darwin and Wolf, y en eventos como Summit 360° de Monte Sinaí.</p>
+            <span class="portrait-hint" id="portrait-hint">Dos miradas, una misma persona. Retratos próximamente.</span>
+          </div>
+          <div class="tools" aria-label="Programas que manejo"><span class="tool"><b>Ai</b> Illustrator</span><span class="tool"><b>Ps</b> Photoshop</span><span class="tool"><b>Ae</b> After Effects</span><span class="tool"><b>Pr</b> Premiere Pro</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="portafolio" class="portfolio">
+      <div class="shell section">
+        <div class="section-top" data-reveal><div><p class="eyebrow">Ideas en buena compañía</p><h2>Portafolio<span class="title-dot">.</span></h2></div><span class="section-no">02 / PROYECTOS</span></div>
+        <div class="portfolio-toolbar" data-reveal>
+          <p class="portfolio-intro">Artistas, marcas y proyectos con personalidad.<br>La selección de piezas y videos está en preparación.</p>
+          <div class="filters" aria-label="Filtrar proyectos"><button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Todos <span>06</span></button><button type="button" class="filter" data-filter="artists" aria-pressed="false">Artistas <span>03</span></button><button type="button" class="filter" data-filter="brands" aria-pressed="false">Marcas <span>03</span></button></div>
+        </div>
+        <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+        <div id="projects"></div>
+        <noscript><p>Gran Banda K-Leña · Orquesta Adolescencia · Christopher Caparros. Activa JavaScript para explorar los espacios de sus proyectos.</p></noscript>
+        <div class="portfolio-outro" data-reveal><span>¿Tu marca podría estar aquí?</span><a class="text-link" href="#contacto">Hagamos que pase <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></div>
+      </div>
+    </section>
+    <section id="contacto" class="contact">
+      <div class="contact-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="shell contact-inner" data-reveal>
+        <p class="eyebrow">Tu idea. Nuestra próxima conversación.</p>
+        <h2>Hagamos algo<br><em>que conecte<span>.</span></em></h2>
+        <p>Agendas, diseño y contenido en movimiento para tu próximo proyecto. Cuéntame qué tienes en mente.</p>
+        <a class="btn" href="https://wa.me/593987696943?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20Alux%20Studio" target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp <span class="button-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+        <div class="contact-social" aria-label="Redes sociales">
+          <a class="social-icon" href="https://www.instagram.com/alux.estudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Alux Studio"><img src="assets/instagram.svg" alt="" width="20" height="20"></a>
+          <a class="social-icon" href="https://www.tiktok.com/@alux.estudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Alux Studio"><img src="assets/tiktok.svg" alt="" width="20" height="20"></a>
+          <span class="social-icon pending" title="Facebook: enlace pendiente" aria-label="Facebook, enlace pendiente"><img src="assets/facebook.svg" alt="" width="20" height="20"></span>
+          <a class="social-icon" href="https://wa.me/593987696943" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Alux Studio"><img src="assets/whatsapp.svg" alt="" width="20" height="20"></a>
+        </div>
+        <span class="contact-location">De Cuenca, Ecuador, a donde esté tu idea.</span>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><a class="footer-brand" href="#inicio" aria-label="Volver al inicio"><img src="assets/alux-studio.svg" alt="Alux Studio" width="106" height="44"></a><span>© <span id="year">2026</span> Alux Studio<br>Alex Xavier Mullo Yugla</span><a class="back-top" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>
